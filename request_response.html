@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id='kitten' src='https://placekitten.com/240/120' />
+    <hr/>
+    <form>
+        <input id='img_w' type="range" min='12' max='640' step='10'
+            placeholder="width" required />
+        <input id='img_h' type="range" min='12' max='640' step='10'
+            placeholder="height" required />
+        <button id='btnGo'>Go</button>
+    </form>
+    
+</body>
+<script>
+    // event handlers
+    const alterImage = (e)=>{
+        // we need to prevent the default action of form submit
+        e.preventDefault() // careful - this ALSO turns of form validation!
+
+        // set the w and h based on form field values
+        let img_w = document.getElementById('img_w')
+        let img_h = document.getElementById('img_h')
+        let w = img_w.value
+        let h = img_h.value
+        let new_url = `https://placebear.com/${w}/${h}`
+        kitten.setAttribute('src', new_url)
+    }
+
+    // assign event listeners
+    // we really should use proper DOM access (rather than rely on non-standard id acces)
+    let btnGo = document.getElementById('btnGo')
+    btnGo.addEventListener('click', alterImage)
+
+</script>
+</html>

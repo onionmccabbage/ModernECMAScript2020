@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- these are semantic tags -->
+    <header></header>
+    <nav></nav>
+    <article>
+        <section id='cookieSection'>
+            <!-- try to avoid inline event handlers like onclick='doStuff()' -->
+            <button id='btnAgree'>Agree</button>
+        </section>
+    </article>
+    <footer></footer>
+</body>
+<script>
+    // why use let rather than var
+    function hoistMe(){
+        let y = NaN
+        var x = 1
+        console.log(x, typeof(NaN))
+        y = 'something'
+    }
+
+
+    hoistMe()
+
+
+
+
+
+    // declare call-back event handler functions
+    const doStuff = ()=>{
+        console.log('button clicked')
+        // we can remove the event listener (remove signature must match add signature)
+        btnAgree.removeEventListener('click', doStuff)
+        // remove the button from the DOM
+        cookieSection.innerHTML = 'Thank you for agreeing to cookies'
+    }
+
+    // add an event listener to the button
+    btnAgree.addEventListener('click', doStuff) // .....
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Data from an API end-point (using Fetch)</title>
+</head>
+<body>
+    <header></header>
+    <nav></nav>
+    <article>
+        <section>
+            <!-- choose a category and a number -->
+            <select id='cat'>
+                <option>users</option>
+                <option selected>posts</option>
+                <option>albums</option>
+                <option>photos</option>
+                <option>todos</option>
+            </select>
+            <br/>
+            <input type='number' value='1' id='num' min="1" max="9" />
+            <br/>
+            <button id='btnGo'>Go</button>
+        </section>
+        <section>
+            <pre id='output'>
+                <!-- show results for the chosen category and number -->
+            </pre>
+
+        </section>
+    </article>
+    <footer></footer>
+</body>
+<script>
+    // no need to wait for a page load, since script is at bottom of page
+    // grab some handles to DOM elements (NB these trivial lines are 'blocking' but not so you'd notice)
+    let cat = document.getElementById('cat')
+    let num = document.getElementById('num')
+    let btnGo = document.getElementById('btnGo')
+    let output = document.getElementById('output')
+
+    // try not to polute the global namespace
+    returned_data = {}
+
+    // declare some functions
+    const getData = ()=>{
+        let dataURL = `https://jsonplaceholder.typicode.com/${cat.value}/${num.value}`
+        // make a call using the Fetch API
+        fetch(dataURL)
+            .then( (response)=>{ // .then will wait before executing i.e. it is asynchronous
+                return response.json() // resolve the Promise
+            } )
+            .then( (data)=>{
+                console.log(data)
+                returned_data = JSON.stringify(data)
+                output.innerHTML = returned_data
+            } )
+            .catch( ()=>{} ) // good idea
+    }
+
+    // hook up some event listeners
+    btnGo.addEventListener('click', getData)
+
+
+</script>
+</html>

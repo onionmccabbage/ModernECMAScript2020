@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import SwapiForm from './components/swapi_form'
+// we will need this static asset so import it here
+import sw_banner from './assets/starwarsBanner.jpg'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      {/* this header would make a good component */}
+      <header> 
+        <img width='100%' src={sw_banner} />
       </header>
+      <article>
+        <SwapiForm />
+      </article>
     </div>
   );
 }

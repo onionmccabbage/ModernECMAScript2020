@@ -1,0 +1,20 @@
+ECMAScript Review Exercise 1 about half an hour ish
+============================ see https://pastebin.com/4Ss23fjP
+Use this API end-point to show images based on what users enter into a form field:
+	https://graph.facebook.com/billgates/picture?type=normal
+
+NB works for 'billgates', 'mickeymouse', 'pluto' etc.
+
+Details
+- create a new web page for this
+- link the script to a separate file
+- put an image and any form fields and buttons you want on the page
+- find a way to update the image src as the user types in the field
+- decide if you need a <form> tag for this
+- make decisions about your code style, aiming for clean, performant code
+
+Optional
+- Offer an option to persist a successful image (and add a new image to be controlled)
+- every time the form field value changes store the value in localStorage
+- When the page first loads, retrieve any value from localStorage and pre-populate the field with that value
+- Explore whether there is any difference in how the page behaves when running locally (c:) or via a web server (npx http-server)

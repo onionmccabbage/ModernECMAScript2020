@@ -24,10 +24,15 @@
             <button id='btnGo'>Go</button>
         </section>
         <section>
+            <aside>
+                <h3 id='which_category'></h3>
+                <h4 id='which_number'></h4>
+                <p id='details'></p>
+            </aside>
+
             <pre id='output'>
                 <!-- show results for the chosen category and number -->
             </pre>
-
         </section>
     </article>
     <footer></footer>
@@ -53,7 +58,11 @@
             } )
             .then( (data)=>{
                 console.log(data)
-                returned_data = JSON.stringify(data)
+                // put some values onto the page
+                document.getElementById('which_category').innerHTML = cat.value
+                document.getElementById('which_number').innerHTML = num.value
+                document.getElementById('details').innerHTML = data.title // most data we deal with will have a title
+                returned_data = JSON.stringify(data) // reverse of JSON.parse()
                 output.innerHTML = returned_data
             } )
             .catch( ()=>{} ) // good idea

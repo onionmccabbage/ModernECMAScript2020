@@ -1,0 +1,20 @@
+ECMAScript Review Exercise 2
+============================
+Begin a new React App. Delete the default content in App.js
+Provide two form fields, one for 'category' and one for 'id'
+Category can be people, planets, vehicles, starships or species and id is a number from 1-6
+Also provide a button with an event handler
+
+Clicking the button should populate props (cat and id) which you will inject as props to another component
+This child component should use the 'cat' and 'id' values to make a request to https://swapi.dev/api/cat/id
+ - This will be request(.....).then().then()
+
+In the second 'then' you will have the returned data as text. Find the 'name' property and show it in the component
+
+Optional
+--------
+Conditionally render other bits of information
+So for example 'people' have eye-color and 'planets' have rotational period etc.
+When the results come back, list each film as hyperlinks. Clicking a link should fetch the data about that film and show relevant info in another component
+Handle API errors (e.g. vehicle number 4) elegantly
+Only enable the button if both fields are filled in

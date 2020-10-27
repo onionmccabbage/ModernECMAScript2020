@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring ECMAScript Features</title>
+    <script type='module'></script>
+</head>
+
+<body>
+    <h2>Exploring ECMAScript Features</h2>
+    <h6>NB see the console...</h6>
+</body>
+<script>
+    // there are loads of ways to write a function
+    // old-skool
+    function oldie(){
+
+    }
+    // new skool
+    const fnA = (x)=>{return x*x}
+    const fnB = x=>{return x*x} // if htere is only one incoming param, we dont need the brackets
+    const fnC = x=>x*x // if there's only one line, we dont need the braces OR the raturn statement
+
+    console.log( fnA(2), fnB(3), fnC(4) )
+
+
+    let not_a_block = {} // this is an object, not a block
+
+    // Remember - in JS EVERYTHING is ultimately an Object (event classes, even functions)
+    // classes - imagine a user with a username and an email (plus other members too)
+    // we encapsulate related data inside a class
+    class User { // classes can have a name, typically PascalCase
+        // any properties of this class go here (do not use let or const)
+        _username // by convention we use _ to 'hide' values
+        email
+        authenticated = false // is the user logged in yet?
+        // we can declare an _optional_ constructor
+        constructor(un = 'default', em = 'default') { // any initial properties can be set here
+            this.username = un
+            this.email = em
+        }
+        // we can declare methods of this class (i.e. functions)
+        authenticate(token) { // this is how we write functions inside a class
+            if (token == 'valid') {
+                this.authenticated = true
+            }
+            else {
+                this.authenticated = false
+            }
+        }
+        // optionally we can have get/set methods and evaluation methods
+        get username() { // username is NOT the same as _username
+            return this._username
+        }
+        set username(new_name) {
+            if (new_name == '' || typeof (new_name) != 'string') {
+                // there's a problem - in this case do nothing
+            } else {
+                this._username = new_name
+            }
+        }
+    }
+
+    // object
+    let o3 = Object.create({}) // this descends from the default JS object
+        o3.someProp = 'nearly coffee'
+
+    let o5 = Object.create(null)
+        o5.otherProp = 'lunch'
+
+    console.log(o3, o5)
+
+    // functions
+
+    // immediate code (this is where we can test our code)
+    let ada = new User() // we now have an isntance of our User class
+    ada.username = 'Ada' // this will succeed (it calls the set username method)
+    ada.username = '' // this will fail
+    ada.email = 'ada@babbage.ie'
+    ada.authenticate('valid')
+    console.log(ada)
+
+</script>
+
+</html>

@@ -1,13 +1,14 @@
-ECMAScript Review Exercise 2
-============================
+ECMAScript Review Exercise 2 see https://pastebin.com/YbNX4EFY
+============================ for about an hour - until 3:35 ish
 Begin a new React App. Delete the default content in App.js
 Provide two form fields, one for 'category' and one for 'id'
 Category can be people, planets, vehicles, starships or species and id is a number from 1-6
+Bind the form fields to stateful properties of the component (use class-based component)
 Also provide a button with an event handler
 
 Clicking the button should populate props (cat and id) which you will inject as props to another component
 This child component should use the 'cat' and 'id' values to make a request to https://swapi.dev/api/cat/id
- - This will be request(.....).then().then()
+ - This will be fetch(.....).then().then()
 
 In the second 'then' you will have the returned data as text. Find the 'name' property and show it in the component
 

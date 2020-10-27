@@ -4,7 +4,10 @@ import React from 'react'
 // declare a functional component
 const About = ( {title, products} )=>{ // we an choose to pass in props, here called 'title'
     // set up any properties
-    
+    // NB in React props are IMMUTABLE
+    // use State for mutable values
+
+
     // .. and any methods
     // the ONE thing we MUST have is a return statement
     return (

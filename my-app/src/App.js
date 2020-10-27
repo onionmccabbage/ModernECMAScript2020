@@ -3,6 +3,7 @@ import './App.css';
 
 // import our custom components
 import About from './components/about'
+import SampleForm from './components/sample_form'
 
 function App() {
   // declare properties of this component
@@ -14,6 +15,7 @@ function App() {
     <div className="App"> 
       <h2>Welcome to React</h2>
       <About title='This is a string literal' products={products} />
+      <SampleForm />
     </div>
   );
 }

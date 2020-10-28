@@ -3,7 +3,7 @@ import Weather from './components/Weather'
 import './App.css'
 
 // a functional component since there is no state needed here
-function App() {
+function App():JSX.Element {
   return (
     <div className="App">
       <h3>Review 3 Weather App</h3>

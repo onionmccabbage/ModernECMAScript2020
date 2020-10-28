@@ -1,0 +1,27 @@
+React and TypeScript Review Exercise see https://pastebin.com/6p6iJk3T
+==================================== until about 3:00
+Generate a new ReactJS App using the typscript template
+  npx create-react-app weather-app --template typescript
+
+Provide controlled fields where the user can enter a city (2 or more characters) and a country (2-3 characters only)
+Bind these to values in the application state, with sensible defaults
+
+Make a fetch request based on these parameters e.g.
+https://api.openweathermap.org/data/2.5/weather?q=london,uk&units=metric&APPID=48f2d5e18b0d2bc50519b58cce6409f1
+(Note the APPID key which is good for 60 requests per minute)
+
+If you like, make an initial weather request when the page first loads (using componentDidMount life-cycle event)
+(NB life-cycle events are only available on Class-based components)
+
+Present the weather description and temperature in the view, using something like this:
+  this.state.result.weather[0].description
+  this.state.result.main.temp
+
+Optional
+--------
+Show other data values, such as wind speed and direction, and geo lat/lon
+Use data types for variables and function return types
+Also data-type collections, using interfaces and/or classes as you need
+Decide when to use class-based components and when to use function-based components
+Persist each search in an array along with a time-stamp. Show this data in a component
+Consider writing individual style sheets for each component (remember, App.css will leak into child components)

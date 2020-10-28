@@ -82,6 +82,31 @@
     ada.authenticate('valid')
     console.log(ada)
 
+// classes and inheritance
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  prettyOutput() {
+    return 'This is an instance of a ' + this.carname;
+  }
+}
+
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand);
+    this.model = mod;
+  }
+  show() {
+    return `${this.prettyOutput()} and it is a ${this.model}`;
+  }
+}
+
+myGenericCar  = new Car('Ford')
+mySpecificCar = new Model("Ford", "Ka");
+
+console.log(myGenericCar.prettyOutput(), mySpecificCar.show())
+
 </script>
 
 </html>

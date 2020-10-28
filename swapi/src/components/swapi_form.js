@@ -1,4 +1,4 @@
-    import React, {Component} from 'react'
+import React, {Component} from 'react'
 import SwapiResults from './swapi_results'
 
 export default class SwapiForm extends Component {

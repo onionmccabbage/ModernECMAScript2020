@@ -1,0 +1,16 @@
+{
+  "name": "node_proj",
+  "version": "1.0.0",
+  "description": "demo node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "onion",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "esm": "~3.2.25",
+    "http-server": "0.12.3"
+  }
+}

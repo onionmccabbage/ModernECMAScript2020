@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import './Weather.css';
 import Results from './Results'
 
-// interface IResult { // this must match the incomig result data
-//     weather:Array<any>
-//     main: object
-//     country: string
-//     description?: string
-//     temp?: number
-//     wind_direction?: string
-//     wind_speed?: string
-// }
+interface IResult { // this must match the incoming result data
+    weather:Array<any>
+    main: object
+    country: string
+    description?: string
+    temp?: number
+    wind_direction?: string
+    wind_speed?: string
+}
 
 interface IState { // convention I-nnnn
     city: string
@@ -19,7 +19,7 @@ interface IState { // convention I-nnnn
     temp?: number
     wind_direction?: string
     wind_speed?: string
-    // result:IResult // we could just grab all the data in one go!
+    result?:IResult // we could just grab all the data in one go!
 }
 
 export default class Weather extends Component {
@@ -40,7 +40,7 @@ export default class Weather extends Component {
             .then((response) => { return response.json() })
             .then((result) => {
                 console.log(result)
-                // this.setState({ result:result })
+                this.setState({ result:result })
                 // pick the data members off the returned JSON and populateteh state
                 this.setState({
                     description    : result.weather[0].description,

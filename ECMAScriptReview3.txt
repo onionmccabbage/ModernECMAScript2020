@@ -7,7 +7,7 @@ Provide controlled fields where the user can enter a city (2 or more characters)
 Bind these to values in the application state, with sensible defaults
 
 Make a fetch request based on these parameters e.g.
-https://api.openweathermap.org/data/2.5/weather?q=london,uk&units=metric&APPID=48f2d5e18b0d2bc50519b58cce6409f1
+https://api.openweathermap.org/data/2.5/weather?q=london,uk&units=metric&APPID=4e8da6e9040e437ae6dd1cfc888f170c
 (Note the APPID key which is good for 60 requests per minute)
 
 If you like, make an initial weather request when the page first loads (using componentDidMount life-cycle event)

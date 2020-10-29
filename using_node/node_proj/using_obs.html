@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using RxJS Observables</title>
+</head>
+
+<body>
+    <h2>Using RxJS Observable</h2>
+    <p>everything interesting is in the console</p>
+    <aside id='game'>
+
+    </aside>
+</body>
+<!-- if we use a module then... -->
+<!-- only very recent browsers will usnerstand -->
+<!-- or we could use NodeJS to biuld and transpile for older browsers -->
+<script type='module'>
+    // we can use import since this is a module
+    import { Observable, fromEvent } from 'https://dev.jspm.io/rxjs@6/_esm2015'
+    import { merge, map, filter, distinctUntilKeyChanged, pluck } from 'https://dev.jspm.io/rxjs@6/_esm2015/operators'
+
+    let randNum = Math.floor(Math.random() * 1000) // an integer 0-1000
+    game.innerHTML = randNum
+
+    // react to any click event within the web page
+    const click$ = fromEvent(document, 'click') // click$ is a convention for observables
+    click$.subscribe((_) => { console.log(_) }) // underscore is a convention for trivial stuff
+
+    let gameKeys = ''
+
+    // react to keystrokes...
+    const key$ = fromEvent(document, 'keyup') // this is an observable on the key up event
+        .pipe( // pipe passes the results to...
+            distinctUntilKeyChanged('code'), // only respond to unique key strokes
+            // we're only really interested in which key was pressed so...
+            pluck('key')
+        )
+    // subscribe to our key$ Observable
+    // NB Observables will not miss ANY events - they get stacked and respond in order
+    key$.subscribe((x) => {
+        gameKeys += x
+        if (Number(gameKeys) == randNum) {
+            let winner = document.createElement('p')
+            winner.innerHTML = `${randNum} you WIN!!`
+            game.appendChild(winner)
+        }
+    })
+    // a timer
+    const ob$ = new Observable(observer => {
+        setTimeout(() => {
+            // observer.next('Times UP!!!');
+        }, 400);
+    });
+
+    ob$.subscribe((value) => {
+            let result = document.createElement('p')
+            result.innerHTML = `${randNum} times UP!!`
+            game.appendChild(result)
+        }
+    );
+
+    click$.unsubscribe() // tidy up when we're done
+    key$.unsubscribe()
+    ob$.unsubscribe() 
+
+</script>
+
+</html>

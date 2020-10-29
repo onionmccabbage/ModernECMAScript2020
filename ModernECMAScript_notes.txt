@@ -1,0 +1,93 @@
+Modern ECMAScript
+
+Opera 12...
+
+Monday
+> build a simple interaction in a web page
+> const, let or var
+> Http request and response
+> Forms and the form tag
+> SPA (Single Page Applications)
+> keeping up with the changes to modern ECMAScript
+> after lunch
+  > few loose ends
+  > review exercise
+> Fetch API
+> using a development server (e.g. http-server)
+> http methods e.g. GET and POST
+
+Tuesday
+> what is a promise and why do we care
+> leading-edge ES features
+  > myriad ways to write a fn
+  > Object.create and class
+> Modern Libraries and Frameworks
+  > Angular, Redux, Vue and Axios
+  > React
+> React props and state, also form field and event binding
+> review exercise
+> TypeScript overview
+  > adding TypeScript to a projects
+  > data-typing variables and function returns
+
+Wednesday
+> the problem with one-way React bindings
+> using TypeScript
+  > data-typing state
+  > data-typing collection with generics
+  > classes/interfaces as a data type
+> the build tools
+> CORS and xss security, sanity etc.
+> ES6 rest and spread, object destructuring
+> afternoon review exercise
+> back-port to older platforms (Opera 12)
+> see Babel and browser support
+> the virtual DOM etc.
+> super in class inheritance
+> React class and functional components, state and props
+
+Thursday
+> ... is the weather working again yet? Yes!!! (new API key)
+  4e8da6e9040e437ae6dd1cfc888f170c
+> Testing
+> architecture, non-visual components
+> NodeJS
+  > node command line
+  > node npm init and package.json, ^ ~ etc.
+  > modules, require/import, export and dependencies
+  > back in html: js with modules - the future!!!!
+  > try not to pollute the global namespace
+> async and await
+> RxJS and Observables
+> afternoon mimi review exercise:
+  Your challenge...
+in the html page, show a number and ask the user to type the number
+Set a timer for 400ms. See if you can type quickly!!
+> end of course evaluation
+  frameworktraining.typeform.com/to/ceyLpTxd
+> all my code available
+
+Questions
+> MouseEvent.MOUSE_CLICK rather than 'click'...
+> fix the stateful function in App.tsx (also the button)
+> Form validation - fails if preventdefault!!
+> classes and super()
+
+Useful URLs
+-----------
+https://github.com/onionmccabbage/ModernECMAScript2020
+https://www.caniuse.com/
+https://kangax.github.io/compat-table/es6/
+https://builtwith.com/
+https://jsonplaceholder.typicode.com/users/1
+https://swapi.dev/api/people/1
+https://placebear.com/492/172
+https://babeljs.io/repl/
+https://addyosmani.com/resources/essentialjsdesignpatterns/book/
+https://rxjs.dev/guide/overview
+https://create-react-app.dev/docs/adding-typescript/
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+https://nodejs.dev/learn/the-nodejs-event-loop
+https://www.typescriptlang.org/docs/handbook/react.html
+https://www.typescriptlang.org/docs/handbook/functions.html#functions
+https://reactjs.org/docs/testing-recipes.html
